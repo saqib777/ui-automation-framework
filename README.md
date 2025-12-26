@@ -67,3 +67,57 @@ ui-automation-framework/
 └── README.md
 
 ```
+
+
+Each folder represents a single responsibility and is designed to evolve independently.
+
+---
+
+## Framework Architecture (High-Level)
+
+### Tests Layer
+Contains only test scenarios.
+- No Selenium calls
+- No locators
+- No waits
+- No setup or teardown logic
+
+Tests describe **what** is being validated, not **how**.
+
+---
+
+### Pages Layer
+Implements the Page Object Model.
+- Stores locators
+- Encapsulates UI interactions
+- Uses wait helpers internally
+
+Each page represents a real application screen.
+
+---
+
+### Drivers Layer
+Responsible for browser lifecycle.
+- Driver creation
+- Browser configuration
+- Safe teardown
+
+Tests never interact with WebDriver setup directly.
+
+---
+
+### Utilities Layer
+Shared automation utilities used across the framework:
+- Explicit waits
+- Retry logic
+- Screenshot capture
+- Custom assertions
+- Logging
+- Test data generation
+
+This layer keeps test and page code clean and consistent.
+
+---
+
+## Example Test (Happy Path Login)
+

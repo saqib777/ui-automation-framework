@@ -151,5 +151,5 @@ This is especially useful in CI environments where visual debugging is critical.
 
 ## How to Run Tests
 
-1. Install dependencies:
+1. Install dependencies: pip install -r requirements.txt
 

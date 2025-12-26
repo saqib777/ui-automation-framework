@@ -121,3 +121,13 @@ This layer keeps test and page code clean and consistent.
 
 ## Example Test (Happy Path Login)
 
+def test_valid_login(driver):
+login_page = LoginPage(driver)
+login_page.open()
+login_page.login(
+    username="tomsmith",
+    password="SuperSecretPassword!"
+)
+
+success_message = login_page.get_success_message()
+assert "You logged into a secure area!" in success_message

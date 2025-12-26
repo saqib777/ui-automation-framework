@@ -131,3 +131,25 @@ login_page.login(
 
 success_message = login_page.get_success_message()
 assert "You logged into a secure area!" in success_message
+
+
+This test reads like a scenario, not automation code.
+
+---
+
+## Screenshot on Failure
+
+The framework automatically captures screenshots when a test fails using Pytest hooks.
+
+- No manual calls inside tests
+- Screenshots are timestamped
+- Test name is included in the filename
+
+This is especially useful in CI environments where visual debugging is critical.
+
+---
+
+## How to Run Tests
+
+1. Install dependencies:
+
